@@ -1,49 +1,75 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REVIEWR</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<body>
+    <header>
+        <div class="headerDiv">
+        <img id="logo" src="img/logo.png"/><span>Amber's REVIEWR</span>
+       </div>
+    </header>
+    <div id="home" class="show">
+        <div class="noImage hidden">You haven't upload any image, please click <a class="here" href="#" onclick="addImage()">HERE</a> or "+" BUTTON to
+            start your reviewer.
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+        <div class="contentList">
+
+        </div>
+    </div>
+    <input class="button" id="addButton" type="button" value="+">
+    <div id="detail" class="hidden">
+        <div id="detailCard">
+        <section>
+            <img class="imageD"/>
+        </section>
+        <section class="titleSec">
+        <p class="titleD"></p>
+        <img class="deleteButton" src="img/deleteIcon.svg">
+        </section>
+        <div class="D stars">
+            <span class="D star">&nbsp;</span>
+            <span class="D star">&nbsp;</span>
+            <span class="D star">&nbsp;</span>
+            <span class="D star">&nbsp;</span>
+            <span class="D star">&nbsp;</span>
+        </div>
+        <div class="buttonCont">
+        <input class="backButton button" type="button" value="Back">
+        </div>
+    </div>
+    </div>
+    <div id="add" class="hidden">
+        <div id="addCard">
+        <section>
+         <img alt="newImage" src="img/example2.jpg" id="photo"/>
+        </section>
+        <div>
+          <span class="titleText">Title </span>
+         <input type="text" id = "newPhotoTitle"/>
+        </div>
+         <div class="A stars">
+            <span>Rating </span>
+            <span class="A star">&nbsp;</span>
+            <span class="A star">&nbsp;</span>
+            <span class="A star">&nbsp;</span>
+            <span class="A star">&nbsp;</span>
+            <span class="A star">&nbsp;</span>
+        </div>
+        <div class="buttonCont">
+        <input id="ABButton" class="button" type="button" value="Back"/>
+         <input id="saveButton" class="button" type="button" value="Save"/>
+        </div>
+    </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>

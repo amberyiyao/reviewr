@@ -23,13 +23,14 @@ let newRating;
 let imageURL;
 
 function init() {
+    // localStorage.setItem(imageList, JSON.stringify(test));
     if (localStorage.getItem(imageList)) {
         test = JSON.parse(localStorage.getItem(imageList));
         getImages();
     } else {
         document.querySelector('.noImage').classList.remove('hidden');
     }
-    // localStorage.setItem(imageList, JSON.stringify(test));
+    
     document.querySelector(".backButton").addEventListener("click", homePage);
     document.querySelector(".deleteButton").addEventListener("click", deleteImage);
     document.getElementById("addButton").addEventListener('click', addImage);
@@ -211,6 +212,8 @@ function imageDetail(ev) {
 
 function addListener() {
     let stars, rating;
+
+    
     if (document.getElementById("add").className.indexOf('show') === 0) {
 
         stars = document.querySelectorAll('.A.star');
@@ -236,7 +239,7 @@ function setRating(ev) {
     let star, stars;
     let span = ev.currentTarget;
 
-    if (document.getElementById("add").className.indexOf('show') === 0) {
+    if (document.getElementById("add").className.indexOf('show') != -1) {
 
         stars = document.querySelectorAll('.A.star');
         star = document.querySelector('.A.stars');
@@ -260,7 +263,7 @@ function setRating(ev) {
         }
     });
 
-    if (document.getElementById("add").className.indexOf('show') === 0) {
+    if (document.getElementById("add").className.indexOf('show') != -1 ) {
 
         newRating = num;
 
